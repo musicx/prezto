@@ -10,6 +10,9 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+HISTSIZE=65536
+SAVEHIST=65536
+
 #  Customize to your needs...
 source "$HOME/.dotfiles/zsh_custom/env.zsh"
 source "$HOME/.dotfiles/zsh_custom/alias.zsh"
