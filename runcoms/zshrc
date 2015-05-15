@@ -16,6 +16,12 @@ source "$HOME/.dotfiles/zsh_custom/alias.zsh"
 source "$HOME/.dotfiles/zsh_custom/function.zsh"
 #source "$HOME/.dotfiles/zsh_custom/tmux.zsh"
 
+# solve problem of manually quoting urls
+some_remote_commands=(scp rsync)
+zstyle -e :urlglobber url-other-schema \
+    '[[ $some_remote_commands[(i)$words[1]] -le ${#some_remote_commands} ]] && reply=("*") || reply=(http https ftp)'
+
+
 fpath=($HOME/.dotfiles/zsh_custom/zsh-completions/src $fpath)
 
 if [ $commands[autojump] ]; then # check if autojump is installed
