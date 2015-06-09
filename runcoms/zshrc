@@ -90,6 +90,3 @@ zsh-pip-cache-packages() {
       rm $tmp_cache
   fi
 }
-
-launchctl setenv GOROOT $GOROOT
-launchctl setenv GOPATH $GOPATH
